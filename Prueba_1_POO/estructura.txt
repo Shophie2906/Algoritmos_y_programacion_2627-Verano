@@ -1,0 +1,46 @@
+MET RACING - ESTRUCTURE
+
+COMPONENTES
+- MODELO
+- MARCA  
+- CANT_MEJORAS
+- MAX_MEJORAS
+
+-- MOTOR 
+   - REVOLUCIONES --> que aumentan o disminuyen si el auto acelera o frene
+-- TRANSMISION
+   - TIPO
+     - AUTOMATICA
+     - SINCRONICA
+   - TORQUE (Newton*m) --> Disminuye o aumenta cuando aumentan las REVOLUCIONES del motor
+-- CARROCERIA
+   - PESO --> Disminuye cuando se le hacen mejoras a la misma
+-- RUEDAS (4)
+   - REV_RUEDAS --> cambia si el auto acelera o frena
+
+PARAMETROS 
+- VMAX (Km/h)
+- TMAX (s) --> mide cuanto paso hasta llegar a los 100Km/h partiendo del reposo
+- DMAX (m) --> aplica frenos a los 100Km/h para llegar a reposo 
+- SUJECION (grips)
+- POTENCIA --> Potencia de TRANSMISION
+
+AUTO_CARRERAS 
+- MODELO
+- MARCA
+- AUTO_ESTANDAR 
+  auto_estandar = {
+    vmax = 180.0,   #Km/h 
+    tmax = 14.0,    #segundos
+    dmax = 80.0,    # metros
+    sujecion = 1.0, # grips
+   }  
+- IP --> IP_INICIAL = (VMAX*0.5)+TMAX
+- CONJ_MEJORAS --> Modifica VMAX, TMAX, FRENADO, SUJECION, TRANSMISION e IP
+    - MEJORA_MOTOR (X = (1, 2, 3)) 
+               --> Puede tener hasta 3 mejoras.
+               IP = IP_INICIAL + ((X*0.7)+ (VMAX*0.7)+PT
+               VMAX = VMAX*0.8
+
+
+
