@@ -11,6 +11,8 @@ class Categoria:
         print(f"ID: {self.id}")
         print(f"Nombre: {self.nombre}")
         print(f"Cantidad de productos: {self.cantidad_productos}")
-        print(f"Encargado: {self.encargado}")
-        print(f"Productos: {self.productos}")
+        print(f"Encargado: {self.encargado.nombre}")
+        print(f"Productos: ")
+        for producto in self.productos:
+            producto.resumen()
 

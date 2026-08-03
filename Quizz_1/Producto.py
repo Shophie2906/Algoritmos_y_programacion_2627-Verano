@@ -12,6 +12,9 @@ class Producto:
         print(f"Precio: {self.precio}")
         print(f"Stock: {self.stock}")
 
+    def resumen(self):
+        print(f"\t {self.id} - {self.nombre} ({self.stock})")
+
 class Bebida(Producto):
     def __init__(self, id, nombre, precio, stock, volumen, alcoholica):
         super().__init__(id, nombre, precio, stock)
@@ -32,4 +35,5 @@ class Alimento(Producto):
     def show(self):
         super().show()
         print(f"Porción: {self.porcion}")
-        print(f"Cantidad de personas: {self.cant_personas}")
+        print(f"Cantidad de personas: {self.cant_personas}") 
+
