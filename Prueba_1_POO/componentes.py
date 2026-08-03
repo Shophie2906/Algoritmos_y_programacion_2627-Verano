@@ -23,7 +23,7 @@ class Componente:
             return True
 
     def set_mejora(self):
-        self.numero_mejoras+=1
+        self.cant_mejoras+=1
 
 class Motor(Componente):
     def __init__(self, marca, modelo):
@@ -36,5 +36,33 @@ class Motor(Componente):
 
     def actualizar_dinamica(self, vel, vmax):
         if vel > 0 :
-            self.rpm = (vel /)
-    
+            self.rpm = 900 + int((vel / vmax) * 6100)
+        else: 
+            self.rpm = 0
+
+class Transmision(Componente):
+    def __init__(self, marca, modelo, tipo="Sincronica"):
+        super().__init__(marca, modelo)
+        self.tipo = tipo
+        self.torque = 0.0
+        self.max_mejoras = 2
+
+    def actualizar_dinamica(self, pt, rpm_motor):
+         self.torque = pt * (rpm_motor / 1000)
+
+class Carroceria(Componente):
+    def __init__(self, marca, modelo, peso_kg=1200):
+        super().__init__(marca, modelo)
+        self.peso_kg = peso_kg
+        self.max_mejoras = 3
+
+class Ruedas(Componente):
+    def __init__(self, marca="Generic", modelo="Sport"):
+        super().__init__(marca, modelo)
+        self.rpm = 0
+        self.max_mejoras = 3
+
+    def actualizar_dinamica(self, vel):
+        self.rpm = int((vel*1000)/ (60 * 2.0))
+
+        
