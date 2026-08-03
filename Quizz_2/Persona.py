@@ -33,7 +33,9 @@ class Pasajero(Persona):
         super().show()
         print(f"Millas: {self.millas}")
         print(f"Boleto confirmado: {self.confirmado}")
-        
+
+    def confirmar_boleto(self):
+        self.confirmado = True  
        
        
         

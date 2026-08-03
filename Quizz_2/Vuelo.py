@@ -1,4 +1,4 @@
-
+from Persona import Pasajero
 class Vuelo:
     def __init__(self, id, fecha_salida, lugar_despegue, destino, piloto, pasajeros):
         self.id = id
@@ -13,6 +13,8 @@ class Vuelo:
         print(f"Fecha de salida: {self.fecha_salida}")
         print(f"Lugar de despegue: {self.lugar_despegue}")
         print(f"Destino: {self.destino}")
-        print(f"Piloto: {self.piloto}")
-        print(f"Pasajeros: {self.pasajeros}")
+        print(f"Piloto: {self.piloto.nombre}")
+        print(f"Pasajeros: ")
+        for pasajero in self.pasajeros:
+            print(f" {pasajero.cedula} - {pasajero.nombre} ({pasajero.confirmado})")
         
