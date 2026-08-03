@@ -1,4 +1,3 @@
-
 class Producto:
     def __init__(self, id, nombre, precio, stock):
         self.id = id
@@ -14,6 +13,9 @@ class Producto:
 
     def resumen(self):
         print(f"\t {self.id} - {self.nombre} ({self.stock})")
+
+    def cambiar_stock(self, nuevo_stock):
+        self.stock = nuevo_stock
 
 class Bebida(Producto):
     def __init__(self, id, nombre, precio, stock, volumen, alcoholica):
